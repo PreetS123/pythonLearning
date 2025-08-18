@@ -1,0 +1,10 @@
+{
+    "name": "Preeti Sharma",
+    "age": 25,
+    "skills": [
+        "ReactJS",
+        "JavaScript",
+        "Python",
+        "MongoDB"
+    ]
+}
