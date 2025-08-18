@@ -1,0 +1,2 @@
+User: What is AI?
+Bot: AI means Artificial Intelligence
