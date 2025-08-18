@@ -1,0 +1,6 @@
+User: Hello
+Bot: Hi there!
+--------------------
+User: What's your name?
+Bot: I am an AI assistant.
+--------------------

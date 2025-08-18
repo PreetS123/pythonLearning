@@ -1,0 +1,12 @@
+{
+  "models": [
+    {
+      "name": "GPT-4",
+      "type": "text"
+    },
+    {
+      "name": "Stable Diffusion",
+      "type": "image"
+    }
+  ]
+}
