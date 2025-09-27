@@ -1,9 +1,15 @@
 
 
-def password_check(password):
-    if len(password) < 6:
-        return "Weak"
-    elif len(password) >=6 and len(password)<=11:
-        return "Medium"
+
+def coffee_order(size):
+    size= size.lower()
+    if  size == "small":
+        return "Small short"
+    elif size == "medium":
+        return "Medium short"
+    elif size == "large":
+        return "Extra shot"
     else:
-        return "Strong"
+        return "Extra large shot"
+
+print(coffee_order("LARGE"))
