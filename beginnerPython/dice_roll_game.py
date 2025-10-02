@@ -1,12 +1,16 @@
 import random
 
-option= input("Roll the dice? (y/n)").lower()
+rolls = int(input("How many times do you want to roll the dice? "))
 
-if option=='y':
-    dice1=random.randint(1,6)
-    dice2 = random.randint(1,6)
-    print(f'{dice1}, {dice2}')
-elif option=='n':
-    print("Thanks for playing!")
-else:
-    print("Invalid option")
+num_dice= int(input("How many dice do you want to roll each time? "))
+for i in range(rolls):
+
+     option= input(f"Roll {num_dice} (y/n) ").lower()
+
+     if option=='y':
+         dice_value=[random.randint(1,6) for _ in range(num_dice)]
+         print('You rolled:',",".join(map(str,dice_value)))
+     elif option=='n':
+         print("Thanks for playing!")
+     else:
+         print("Invalid option")
