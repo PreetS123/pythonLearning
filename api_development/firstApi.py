@@ -1,3 +1,4 @@
+from typing import Optional
 from fastapi import FastAPI, Path
 
 
@@ -28,8 +29,8 @@ def get_student(student_id: int = Path(description="The ID of the student you wa
     return students[student_id]
 
 
-@app.get("/get-by-name/{name}")
-def get_student(name: str):
+@app.get("/get-by-name")  # /get-by-name?name=preeti
+def get_student(*, name: Optional[str] = None):
     for student_id in students:
         if students[student_id]["name"] == name:
             return students[student_id]
