@@ -15,7 +15,7 @@ students = {
     1: {
         "name": "Preeti",
         "age": 17,
-        "class": "std 12"
+        "year": "std 12"
     }
 }
 
@@ -24,6 +24,12 @@ class Student(BaseModel):
     name: str
     age: int
     year: str
+
+
+class UpdateStudent(BaseModel):
+    name: Optional[str] = None
+    age: Optional[int] = None
+    year: Optional[str] = None
 
 
 @app.get("/")
@@ -50,3 +56,20 @@ def create_student(student_id: int, student: Student):
         return {"Error: ": "Student already exists"}
     students[student_id] = student
     return students
+
+
+@app.put("/update-student/{student_id}")
+def update_student(student_id: int, student: UpdateStudent):
+    if student_id not in students:
+        return {"Error: ": "Students doesnot exists"}
+    else:
+        if student.name != None:
+            students[student_id]["name"] = student.name
+
+        if student.age != None:
+            students[student_id]["age"] = student.age
+
+        if student.year != None:
+            students[student_id]["year"] = student.year
+
+        return students[student_id]
